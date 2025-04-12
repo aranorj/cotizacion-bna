@@ -1,7 +1,7 @@
 from flask import Flask, current_app
 from flask import json
 from bs4 import BeautifulSoup
-import urllib
+import urllib.request
 from flask_cors import CORS, cross_origin
 
 
@@ -37,7 +37,7 @@ class BancoNacionParser():
 		self.url = url;
 	
 	def openUrl(self):
-		response = urllib.urlopen(self.url)
+		response = urllib.request.urlopen(self.url)
 		html = response.read()
 		return html
 
